@@ -1,4 +1,6 @@
-using System;
+using System.Collections.Generic;
+using System.Diagnostics;
+using Singularity;
 
 namespace SingularityEnumerable
 {
@@ -6,7 +8,36 @@ namespace SingularityEnumerable
     {
         public static void Main()
         {
-            Console.WriteLine("Hello World!");
+            var container = new Container(builder => {
+                builder.Register<ICommon, Dependency1>();
+                builder.Register<ICommon, Dependency2>();
+            });
+
+            var instances = container.GetInstance<IReadOnlyCollection<ICommon>>();
+            // instances.Count == 1
         }
+    }
+
+    public interface ICommon
+    {
+
+    }
+
+    public class Dependency1 : ICommon
+    {
+
+    }
+
+    public class Dependency2 : ICommon
+    {
+        public Dependency2(ITransitiveDependency unregistered)
+        {
+
+        }
+    }
+
+    public interface ITransitiveDependency
+    {
+
     }
 }
