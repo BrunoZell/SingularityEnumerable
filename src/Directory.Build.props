@@ -1,0 +1,17 @@
+<Project>
+
+  <!-- Project defaults for the /src folder -->
+
+  <PropertyGroup>
+    <LangVersion>8.0</LangVersion>
+    <Nullable>enable</Nullable>
+    <Version>0.1.0</Version>
+    <AssemblyVersion>0.1.0</AssemblyVersion>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <Authors>Bruno Zell</Authors>
+    <Copyright>$(Authors) $([System.DateTime]::Now.ToString(yyyy))</Copyright>
+  </PropertyGroup>
+
+</Project>
