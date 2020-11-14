@@ -15,6 +15,9 @@ namespace SingularityEnumerable
 
             var instances = container.GetInstance<IReadOnlyCollection<ICommon>>();
             // instances.Count == 1
+
+            var instance = container.GetInstance<Dependency2>();
+            // Singularity.Exceptions.DependencyResolveException: Failed to resolve dependency SingularityEnumerable.Dependency2
         }
     }
 
